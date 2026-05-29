@@ -18,7 +18,7 @@ Every review includes a **Requirements Coverage Matrix** — every stated requir
 
 ## Core Principle
 
-**Review. Don't change.** AI 助手不修改你的代码。它提供审查——你决定如何处理。
+**Review. Don't change.** 模型不修改你的代码。它提供审查——你决定如何处理。
 
 ## Skills Included
 
