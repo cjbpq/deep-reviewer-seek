@@ -32,7 +32,15 @@ Every review includes a **Requirements Coverage Matrix** — every stated requir
 
 ## Installation
 
-**Copilot（推荐）：** 在 Copilot 启用的工作区中打开本仓库，Copilot 自动读取 `AGENTS.md` 及 `skills/` 下的说明文件。
+**Copilot（推荐）：** 在 VS Code 中打开本仓库作为工作区，Copilot 自动读取：
+- `AGENTS.md`（根目录）— 审查入口
+- `.github/skills/*/SKILL.md` — 8 个审查技能说明
+
+也可全局安装用户级提示词（所有工作区可用）：
+```powershell
+New-Item -ItemType Directory -Force -Path "$env:APPDATA\Code\User\prompts"
+Copy-Item ".github\prompts\deep-reviewer-seek-review.prompt.md" "$env:APPDATA\Code\User\prompts\"
+```
 
 **Claude Code：** 作为插件安装：
 ```bash
