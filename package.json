@@ -1,0 +1,5 @@
+﻿{
+  "name": "deep-reviewer-seek",
+  "version": "1.0.0",
+  "description": "双平台（Copilot + Claude Code）代码审查指令集，融合 Superpowers 审查框架、OpenSpec 追溯方法论和 mattpocock-skills-zh-CN 审查风格"
+}

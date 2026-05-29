@@ -1,0 +1,20 @@
+﻿{
+  "name": "deep-reviewer-seek-dev",
+  "description": "Development marketplace for deep-reviewer-seek core skills library",
+  "owner": {
+    "name": "Cjbpq",
+    "email": "cjbpq@github.com"
+  },
+  "plugins": [
+    {
+      "name": "deep-reviewer-seek",
+      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "version": "5.0.7",
+      "source": "./",
+      "author": {
+        "name": "Cjbpq",
+        "email": "cjbpq@github.com"
+      }
+    }
+  ]
+}

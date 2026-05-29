@@ -1,0 +1,20 @@
+﻿{
+  "name": "deep-reviewer-seek",
+  "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+  "version": "5.0.7",
+  "author": {
+    "name": "Cjbpq",
+    "email": "cjbpq@github.com"
+  },
+  "homepage": "https://github.com/cjbpq/deep-reviewer-seek",
+  "repository": "https://github.com/cjbpq/deep-reviewer-seek",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "tdd",
+    "debugging",
+    "collaboration",
+    "best-practices",
+    "workflows"
+  ]
+}
