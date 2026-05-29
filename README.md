@@ -32,37 +32,38 @@ Every review includes a **Requirements Coverage Matrix** — every stated requir
 
 ## Installation
 
-**Copilot（推荐）：** 在 VS Code 中打开本仓库作为工作区，Copilot 自动读取：
-- `AGENTS.md`（根目录）— 审查入口
-- `.github/skills/*/SKILL.md` — 8 个审查技能说明
+### GitHub Copilot（推荐）
 
-也可全局安装用户级提示词（所有工作区可用）：
+**全局安装**（一次安装，所有项目工作区可用）：
+
 ```powershell
+# 1. 克隆本仓库到本地
+git clone https://github.com/cjbpq/deep-reviewer-seek.git D:\deep-reviewer-seek
+
+# 2. 安装全局 prompt
 New-Item -ItemType Directory -Force -Path "$env:APPDATA\Code\User\prompts"
-Copy-Item ".github\prompts\deep-reviewer-seek-review.prompt.md" "$env:APPDATA\Code\User\prompts\"
+Copy-Item "D:\deep-reviewer-seek\.github\prompts\deep-reviewer-seek-review.prompt.md" "$env:APPDATA\Code\User\prompts\"
 ```
 
-**Claude Code：** 作为插件安装：
+> **为什么用绝对路径？** Copilot 不支持 Claude Code 那样的全局插件机制。`.github/` 配置只在当前工作区生效，无法跨项目。全局 prompt 通过绝对路径引用 `D:\deep-reviewer-seek\` 下的技能文件，实现在任意项目中的审查能力。
+
+### Claude Code
+
+作为插件安装，自动全局生效：
+
 ```bash
 /plugin install D:\deep-reviewer-seek
 ```
 
-## Usage
 
-直接要求 AI 助手审查代码：
+### 审查输出包含
 
-> "审查这个分支的最新变更"
-
-> "检查这个 PR 是否正确实现了认证系统 spec"
-
-> "审查这个文件的安全性和功能正确性"
-
-审查输出包含：
-- 需求覆盖矩阵
-- 按严重度分级的问题（Critical / Important / Minor）
-- 安全性评估
-- 测试覆盖评估
-- 明确合并裁决
+无论使用哪种方式，审查输出均包含：
+- **需求覆盖矩阵** — 每个需求追溯到代码（✅/⚠️/❌）+ 证据（文件:行号）
+- **问题按严重度分级** — Critical（阻塞合并）/ Important（合并前或后修复）/ Minor（不阻塞）
+- **安全性评估** — 明确声明无关注点或列出具体漏洞
+- **测试覆盖评估** — 覆盖缺口分析
+- **明确合并裁决** — "可以合并" / "修复后合并" / "不可合并"
 
 ## License
 
